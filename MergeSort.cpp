@@ -10,7 +10,7 @@ void input() {
         cout << "Masukkan Panjang element array: ";
         cin >> n;
 
-        if (n<= 20) {
+        if (n <= 20) {
             break;
         }
         else {
@@ -22,10 +22,11 @@ void input() {
     cout << "\nInputkan isi Element Array";
     cout << "\n===========================" << endl;
 
-    for (int i = 0; i < n; i++ ) (
-        cout << "Array index ke-" << i << ": ";
+    for (int i = 0; i < n; i++) {
+        cout << "Array index ke-" << i << " : ";
         cin >> arr[i];
-    )
+    
+    }
 }
 
 void mergeSort(int low, int high) {
@@ -42,32 +43,54 @@ void mergeSort(int low, int high) {
 
     //step 4
     int i, j;
-    i = low;     //step 4.a
-    j = mid + 1;//step 4.b
+    int i = low;     //step 4.a
+    int j = mid + 1;//step 4.b
 
     int k = low; //step 4.c
 
     while(i <= mid && j <= high) { //step 4.d
-        if(arr[i] <= arr[j]) { //step 4.d.i
+        if (arr[i] <= arr[j]) { //step 4.d.i
             B[k] = arr[i];
         i++;
     } else {
-        a[k] = arr[j];
+        B[k] = arr[j];
     j++;
     }
     k++; //step 4.d.
 }
 
 //step 4.c
-while(j <= high ) {
+while (j <= high ) {
     B[k] = arr[j];
     j++;
     k++;
 }
 
 //step 4.f
-while ( i<= mid ) {
-    a[k] = arr[i] << ;
+while ( i <= mid ) {
+    B[k] = arr[i]
+    i++;
+    k++;
 }
+
+// step 5
+for (int x = low; x <= high; x++) {
+    arr[x] = B[x];
+}
+
+void output()
+{
+    cout << "\nData setelah diurutkan (Merge Sort): ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
     cout << endl;
+}
+
+int main()
+{
+    input();
+    mergeSort(0, n - 1);
+    output();
 }
