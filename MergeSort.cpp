@@ -38,7 +38,7 @@ void mergeSort(int low, int high) {
     int mid = (low + high ) /2; //step 2
      //step 3
      mergeSort(low, mid); //step 3.a
-     mergeSort(mid + 1, high) //step 3.b
+     mergeSort(mid + 1, high); //step 3.b
 
      //step 4
     int i, j;
@@ -67,7 +67,7 @@ while (j <= high ) {
 
 //step 4.f
 while ( i <= mid ) {
-    B[k] = arr[i]
+    B[k] = arr[i];
     i++;
     k++;
 }
@@ -91,4 +91,5 @@ int main()
     input();
     mergeSort(0, n - 1);
     output();
+}
 }
