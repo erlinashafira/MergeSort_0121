@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int arr[20], B[20]
+int arr[20], B[20];
 
 int n;
 
@@ -34,3 +34,8 @@ void mergeSort(int low, int high) {
     if (low >= high) {
         return; //step 1.a
     }
+
+    int mid = (low + high ) /2; //step 2
+     //step 3
+     mergeSort(low, mid); //step 3.a
+     mergeSort(mid + 1, high) //step 3.b 
